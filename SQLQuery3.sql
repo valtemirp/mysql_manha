@@ -14,7 +14,6 @@ CREATE TABLE produto (
     nome VARCHAR(30),
     preco FLOAT
 );
-
 CREATE TABLE pedido (
     id INT PRIMARY KEY,
     id_cliente INT,
