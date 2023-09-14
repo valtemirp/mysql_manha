@@ -1,24 +1,22 @@
-create database sistema_padaria;
+use sistema_padaria;
 
-use sistema_padaria;	
+insert into produto(id_produto, nome, preco)
+values (2, 'Jujuba', 10.50);
 
-CREATE TABLE cliente (
-    id_cliente INT,
-    cpf VARCHAR(11),
-    CONSTRAINT PK_cliente PRIMARY KEY (id_cliente, cpf)
-);
-	
+SELECT * FROM produto
 
-CREATE TABLE produto (
-    id_produto INT PRIMARY KEY,
-    nome VARCHAR(30),
-    preco FLOAT
+create table podcast(
+	id_podcast int primary key,
+	nome varchar(10)
 );
-CREATE TABLE pedido (
-    id INT PRIMARY KEY,
-    id_cliente INT,
-	cpf varchar(11),
-    id_produto INT,
-    FOREIGN KEY (id_cliente, cpf) REFERENCES cliente(id_cliente, cpf),
-    FOREIGN KEY (id_produto) REFERENCES produto(id_produto)
+
+alter table podcast 
+ALTER COLUMN nome int;
+
+
+create table bate_papo(
+	id_batepapo int primary key,
+	id_podcast int
+	foreign key (id_podcast) references podcast(id_podcast)
 );
+
